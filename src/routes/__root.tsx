@@ -45,6 +45,12 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Randomness Simulator — Live 1–1000 Distribution" },
+      { name: "description", content: "Probability Playground simulates randomness and statistics, visualizing number distribution with a dynamic bar graph." },
+      { property: "og:description", content: "Probability Playground simulates randomness and statistics, visualizing number distribution with a dynamic bar graph." },
+      { name: "twitter:description", content: "Probability Playground simulates randomness and statistics, visualizing number distribution with a dynamic bar graph." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/124b1e09-ebba-40b7-a97e-f6bfbcb64ad0/id-preview-e78f8063--48e74e9b-a949-493f-bc76-138b3e171df5.lovable.app-1776544702574.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/124b1e09-ebba-40b7-a97e-f6bfbcb64ad0/id-preview-e78f8063--48e74e9b-a949-493f-bc76-138b3e171df5.lovable.app-1776544702574.png" },
     ],
     links: [
       {
