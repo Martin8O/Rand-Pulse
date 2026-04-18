@@ -29,11 +29,19 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Randomness Simulator — Live 1–1000 Distribution" },
+      {
+        name: "description",
+        content:
+          "Watch true randomness unfold: roll integers 1–1000 at any speed and see the live frequency distribution with full statistics.",
+      },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Randomness Simulator — Live 1–1000 Distribution" },
+      {
+        property: "og:description",
+        content:
+          "Watch true randomness unfold: roll integers 1–1000 at any speed and see the live frequency distribution with full statistics.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
