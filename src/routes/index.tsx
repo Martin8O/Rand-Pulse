@@ -368,7 +368,7 @@ function SimulatorPage() {
             <div className="flex gap-2">
               <button
                 onClick={toggleRunning}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-[var(--gradient-neon)] px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-neon)] transition-all hover:scale-[1.03] active:scale-95"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-[var(--gradient-neon)] px-5 py-2.5 text-sm font-semibold text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.45)] shadow-[var(--shadow-neon)] transition-all hover:scale-[1.03] active:scale-95"
               >
                 {running ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
                 {running ? "Pause" : "Start"}
