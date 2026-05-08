@@ -1,6 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Play, Pause, RotateCcw } from "lucide-react";
+import { Play, Pause, RotateCcw, Info } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/")({
   component: SimulatorPage,
@@ -353,13 +361,77 @@ function SimulatorPage() {
     <main className="min-h-screen px-4 py-8 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <header className="mb-8 text-center sm:text-left">
-          <h1 className="bg-[var(--gradient-neon)] bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
-            Randomness Simulator
-          </h1>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
-            Roll integers from 1 to 1000 and watch the distribution unfold in real time.
-          </p>
+        <header className="mb-8 flex items-start justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <h1 className="bg-[var(--gradient-neon)] bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
+              Randomness Simulator
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
+              Roll integers from 1 to 1000 and watch the distribution unfold in real time.
+            </p>
+          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-border bg-secondary/60 px-4 py-2 text-sm font-semibold text-secondary-foreground transition-all hover:bg-secondary active:scale-95"
+                aria-label="About this page"
+              >
+                <Info className="h-4 w-4" />
+                About
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-lg">
+              <DialogHeader>
+                <DialogTitle>About this page</DialogTitle>
+                <DialogDescription>
+                  A live randomness &amp; statistics playground.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <p>
+                  This simulator rolls random integers from 1 to 1000 using JavaScript&apos;s
+                  built-in <code>Math.random()</code> and visualizes the frequency
+                  distribution in real time, together with full statistics
+                  (mean, standard deviation, χ², most/least frequent number).
+                </p>
+                <div>
+                  <h3 className="mb-1 font-semibold text-foreground">Where calculations happen</h3>
+                  <p>
+                    Everything runs <strong>100% in your browser</strong>. There is no
+                    backend, no server-side processing, and no database. The page is
+                    static — your device does all the rolling and drawing.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-1 font-semibold text-foreground">Privacy &amp; anonymity</h3>
+                  <p>
+                    No accounts, no logins, no cookies set by this app. No roll data,
+                    settings or personal information ever leave your device. The site
+                    is fully anonymous to use — the operator cannot see what you do here.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-1 font-semibold text-foreground">Disclaimers</h3>
+                  <ul className="list-disc space-y-1 pl-5">
+                    <li>
+                      <code>Math.random()</code> is a pseudo-random generator. It is
+                      <strong> not cryptographically secure</strong> and must not be
+                      used for security, gambling, lotteries, or anything where
+                      unpredictability matters.
+                    </li>
+                    <li>
+                      This page is for educational and entertainment purposes only.
+                      Statistics shown are computed from your current session and are
+                      not guarantees about any real-world process.
+                    </li>
+                    <li>
+                      Provided “as is”, without warranty of any kind. Use at your own risk.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
         </header>
 
         {/* Controls */}
@@ -486,8 +558,22 @@ function SimulatorPage() {
           )}
         </section>
 
-        <footer className="mt-6 text-center text-xs text-muted-foreground">
-          Pure client-side simulation using <code>Math.random()</code>. Drawn at 60fps.
+        <footer className="mt-6 space-y-1 text-center text-xs text-muted-foreground">
+          <div>
+            Pure client-side simulation using <code>Math.random()</code>. Drawn at 60fps.
+          </div>
+          <div>
+            Vibecoded by{" "}
+            <a
+              href="https://github.com/Martin8O"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline-offset-4 hover:underline"
+            >
+              Martin
+            </a>{" "}
+            with Lovable
+          </div>
         </footer>
       </div>
 
